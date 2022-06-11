@@ -14,4 +14,28 @@
   border-radius: 2rem;
   overflow: hidden;
   grid-template-columns: 11rem auto 20rem;
+  gap: 1.5rem;
+}
+
+@media screen and (max-width: 1200px) {
+  .App .appContainer {
+    grid-template-columns: 10% 50% auto;
+    overflow-y: scroll;
+  }
+}
+
+@media screen and (max-width: 800px) {
+  .App .appContainer {
+    display: flex;
+    flex-direction: column;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .App .appContainer {
+    grid-template-columns: 1fr;
+  }
+  .App .appContainer::-webkit-scrollbar {
+    display: none;
+  }
 }

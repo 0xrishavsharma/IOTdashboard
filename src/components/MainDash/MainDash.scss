@@ -1,5 +1,14 @@
-.maindash{
+.mainDash{
     display: flex;
     flex-direction: column;
     justify-content: space-evenly;
+    align-items: center;
 }
+
+@media (max-width:1200px){
+    .mainDash{
+        margin-top: 2rem;
+        justify-content:flex-start ;
+    }
+}
+

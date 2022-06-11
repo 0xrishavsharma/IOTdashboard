@@ -99,3 +99,21 @@
   width: 75%;
   color: white;
 }
+
+@media (max-width: 1200px) {
+  .expandedCard {
+    top: 2rem;
+    height: 45vh;
+    left: 8rem;
+  }
+}
+
+@media screen and (max-width: 786px) {
+  .expandedCard {
+    top: 6rem;
+    left: 15px;
+    height: 50%;
+    width: 80%;
+    align-items: center;
+  }
+}

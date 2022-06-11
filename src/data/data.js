@@ -82,3 +82,28 @@ export const cardsData = [
     },
     
 ]
+
+import img1 from "../img/img1.png";
+import img2 from "../img/img2.png";
+import img3 from "../img/img3.png";
+
+export const updatesData = [
+    {
+        image: img3,
+        name: "Helery Clint",
+        notification: "has ordered Macbook M2 Air",
+        time: "23 seconds ago",
+    },
+    {
+        image: img2,
+        name: "Raquel Shilon",
+        notification: "has ordered Playstation 5 & PS5 Remote controller.",
+        time: "4 minutes ago",
+    },
+    {
+        image: img1,
+        name: "Thomas Harper",
+        notification: "has received FireFox Black Vegan Leather Backpack, 20L",
+        time: "12 minutes ago",
+    }
+]

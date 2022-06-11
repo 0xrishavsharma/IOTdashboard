@@ -1,7 +1,8 @@
 import { useState } from 'react'
 import Sidebar from './components/Sidebar/Sidebar'
 import './App.scss'
-import Maindash from './components/maindash/Maindash'
+import MainDash from './components/MainDash/MainDash'
+import RightSide from './components/RightSide/RightSide'
 
 function App() {
   const [count, setCount] = useState(0)
@@ -10,10 +11,8 @@ function App() {
     <div className="App">
       <div className="appContainer">
         <Sidebar />
-        <Maindash />
-        <div></div>
-        <div></div>
-        <div></div>
+        <MainDash />
+        <RightSide />
       </div>
     </div>
   )
