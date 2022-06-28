@@ -11,10 +11,18 @@
   gap: 1rem;
 }
 
-@media (max-width: 1200px) {
+@media screen and (max-width: 1200px) {
   .rightSide {
     margin-top: 2rem;
     justify-content: flex-start;
     gap: 2rem;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .rightSide {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
   }
 }
