@@ -8,11 +8,11 @@ function App() {
   const [count, setCount] = useState(0)
 
   return (
-    <div className="App">
+    <div className="App bg-purple-200">
       <div className="appContainer">
         <Sidebar />
         <MainDash />
-        <RightSide />
+        {/* <RightSide /> */}
       </div>
     </div>
   )

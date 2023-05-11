@@ -10,80 +10,134 @@ import { yellow } from '@mui/material/colors';
 import "./Table.scss";
 
 function createData(product, orderId, date, status) {
-  return { product, orderId, date, status};
+  return { product, orderId, date, status };
 }
 
 const rows = [
-  createData('Playstation 5', 356891,"9th June 2022", "Approved"),
-  createData('Macbook Air M2', 356890, "9th June 2022", "Pending"),
-  createData('Samsung 2TB SSD UIW345',356889, "9th June 2022", "Delivered"),
-  createData('LG Monitor', 356888, "9th June 2022", "Approved"),
-  createData('Motorola E5 Plus', 356887, "9th June 2022", "Approved"),
+  createData('PET Bottles - 5EDW', 356891, "10th May 2023", "Approved"),
+  createData('Steel Plates - 34339', 356890, "9th May 2023", "Pending"),
+  createData('PET raw pallets', 356889, "9th May 2023", "Delivered"),
+  createData('Steel Plates - 2000', 356888, "8th May 2023", "Approved"),
+  createData('3 Inch Bolt - 4422', 356887, "8th May 2023", "Approved"),
 ];
 
-export default function BasicTable() {
-  
-  const makeStyles = (status)=>{
-    if (status == "Approved"){
-     return {
+export default function BasicTable({ data }) {
+  // const [dashboardRows, setDashboardRows] = React.useState([])
+
+  const makeStyles = (status) => {
+    if (status == "Approved") {
+      return {
         background: "rgb(145 254 159 / 47%)",
         color: "green",
         padding: "0.2rem 0.3rem",
         borderRadius: "5px",
       }
     }
-    else if (status == "Pending"){
-      return{
+    else if (status == "Pending") {
+      return {
         background: "#ffadad8f",
         color: "red",
         padding: "0.2rem 0.3rem",
         borderRadius: "5px",
       }
     }
-    else{
-      return{
-        background: "#00b7ffbe",
-        color: "white",
+    else {
+      return {
+        // background: "#00b7ffbe",
+        // color: "white",
         padding: "0.2rem 0.3rem",
         borderRadius: "5px",
       }
     }
   }
+  console.log("correlation factor", data && data[1].value4)
+  const dashboardRows = [
+    createData(data && data[1].value1, data && data[1].value2, data && data[1].value3 && data[1].value3, data && data[1].value4 && data[1].value4),
+    createData(data && data[2].value1, data && data[2].value2, data && data[2].value3 && data[2].value3, data && data[2].value4 && data[2].value4),
+    createData(data && data[3].value1, data && data[3].value2, data && data[3].value3 && data[3].value3, data && data[3].value4 && data[3].value4),
+    createData(data && data[4].value1, data && data[4].value2, data && data[4].value3 && data[4].value3, data && data[4].value4 && data[4].value4),
+  ]
+
   return (
     <div className="table">
-        <h3>Recent Orders</h3>
-        <TableContainer component={Paper}
-            style={{boxShadow: "0px 13px 20px 0px #80808029", borderRadius: "1rem"}}
-        >
-            <Table sx={{ minWidth: 650 }} aria-label="simple table">
-                <TableHead>
+      <h3>{!data && "Recent Transactions"}</h3>
+      <TableContainer component={Paper}
+        style={{ boxShadow: "0px 13px 20px 0px #80808029", borderRadius: "1rem" }}
+      >
+        <Table sx={{ minWidth: 650 }} aria-label="simple table">
+          <TableHead>
+            {
+              data ?
                 <TableRow>
-                    <TableCell>Product</TableCell>
-                    <TableCell align="left">Order Id</TableCell>
-                    <TableCell align="left">Date&nbsp;</TableCell>
-                    <TableCell align="left">Status&nbsp;</TableCell>
+                  <TableCell>{data[0].heading1}</TableCell>
+                  <TableCell align="left">{data[0].heading2}</TableCell>
+                  {
+                    data[0].heading3 &&
+                    <TableCell align="left">{data[0].heading3}</TableCell>
+                  }
+                  {
+                    data[0].heading4 &&
+                    <TableCell align="left">{data[0].heading4}</TableCell>
+                  }
                 </TableRow>
-                </TableHead>
-                <TableBody>
-                {rows.map((row) => (
-                    <TableRow
-                      key={row.product}
-                      sx={{ '&:last-child td, &:last-child th': { border: 0 } }}
-                      >
-                      <TableCell component="th" scope="row">
-                          {row.product}
+                :
+                <TableRow>
+                  <TableCell>Product</TableCell>
+                  <TableCell align="left">Order Id</TableCell>
+                  <TableCell align="left">Date&nbsp;</TableCell>
+                  <TableCell align="left">Status&nbsp;</TableCell>
+                </TableRow>
+            }
+          </TableHead>
+          <TableBody>
+
+            {console.log("All data", data)}
+            {
+              dashboardRows && data ?
+                dashboardRows.map((row) => (
+                  <TableRow
+                    key={row.product}
+                    sx={{ '&:last-child td, &:last-child th': { border: 0 } }}
+                  >
+                    <TableCell component="th" scope="row">
+                      {row.product}
+                    </TableCell>
+                    <TableCell align="left">{row.orderId}</TableCell>
+                    <TableCell align="left">{row.date}</TableCell>
+                    {
+                      data &&
+                      <TableCell align="left">
+                        <p className="status" >{row.status}</p>
                       </TableCell>
-                      <TableCell align="left">{row.orderId}</TableCell>
-                      <TableCell align="left">{row.date}</TableCell>
+                    }
+                  </TableRow>
+                ))
+                :
+                rows.map((row) => (
+                  <TableRow
+                    key={row.product}
+                    sx={{ '&:last-child td, &:last-child th': { border: 0 } }}
+                  >
+                    <TableCell component="th" scope="row">
+                      {row.product}
+                    </TableCell>
+                    <TableCell align="left">{row.orderId}</TableCell>
+                    <TableCell align="left">{row.date}</TableCell>
+                    {
+                      !data &&
                       <TableCell align="left">
                         <span className="status" style={makeStyles(row.status)}>{row.status}</span>
                       </TableCell>
+                    }
+                    {
+                      !data &&
                       <TableCell align="left" className='details'>details</TableCell>
-                    </TableRow>
+                    }
+                  </TableRow>
                 ))}
-                </TableBody>
-            </Table>
-        </TableContainer>
+          </TableBody>
+        </Table>
+      </TableContainer>
     </div>
   );
 }

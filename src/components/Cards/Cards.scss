@@ -1,13 +1,14 @@
-.cards{
-    display: flex;
+.cards {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(min(250px, 90%), 1fr));
     gap: 1rem;
-    .parentContainer{
+    .parentContainer {
         width: 100%;
     }
 }
 
-@media screen and (max-width:1200px){
-    .cards{
+@media screen and (max-width: 1200px) {
+    .cards {
         flex-direction: column;
     }
 }

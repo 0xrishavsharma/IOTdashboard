@@ -1,0 +1,286 @@
+[
+    {
+        "parameter": "runtime",
+        "heading1": "Date",
+        "heading2": "Average Run Time",
+        "value1": "06/05/2023",
+        "value2": "8",
+        "value3": "",
+        "value4": ""
+    },
+    {
+        "parameter": "runtime",
+        "value1": "07/05/2023",
+        "value2": "7.5",
+        "value3": "",
+        "field5": ""
+    },
+    {
+        "parameter": "runtime",
+        "value1": "08/05/2023",
+        "value2": "7",
+        "value3": "",
+        "field5": ""
+    },
+    {
+        "parameter": "runtime",
+        "value1": "09/05/2023",
+        "value2": "8",
+        "value3": "",
+        "field5": ""
+    },
+    {
+        "parameter": "runtime",
+        "value1": "10/05/2023",
+        "value2": "9",
+        "value3": "",
+        "field5": ""
+    },
+    {
+        "parameter": "runtime",
+        "value1": "11/05/2023",
+        "value2": "10",
+        "value3": "",
+        "field5": ""
+    },
+    {
+        "parameter": "breakdowns",
+        "value1": "value1",
+        "heading1": "value1",
+        "heading2": "Count of Break downs",
+        "value3": "",
+        "field5": ""
+    },
+    {
+        "parameter": "breakdowns",
+        "value1": "06/05/2023",
+        "value2": "1",
+        "value3": "",
+        "field5": ""
+    },
+    {
+        "parameter": "breakdowns",
+        "value1": "07/05/2023",
+        "value2": "2",
+        "value3": "",
+        "field5": ""
+    },
+    {
+        "parameter": "breakdowns",
+        "value1": "08/05/2023",
+        "value2": "0.5",
+        "value3": "",
+        "field5": ""
+    },
+    {
+        "parameter": "breakdowns",
+        "value1": "09/05/2023",
+        "value2": "0",
+        "value3": "",
+        "field5": ""
+    },
+    {
+        "parameter": "breakdowns",
+        "value1": "10/05/2023",
+        "value2": "1",
+        "value3": "",
+        "field5": ""
+    },
+    {
+        "parameter": "breakdowns",
+        "value1": "11/05/2023",
+        "value2": "2",
+        "value3": "",
+        "field5": ""
+    },
+    {
+        "parameter": "machinesRunning",
+        "heading1": "Machine ID",
+        "heading2": "Hrs Logged",
+        "heading3": "Date",
+        "value3": "value1",
+        "field5": ""
+    },
+    {
+        "parameter": "machinesRunning",
+        "value1": "AAA",
+        "value2": "9",
+        "value3": "06/05/2023",
+        "field5": ""
+    },
+    {
+        "parameter": "machinesRunning",
+        "value1": "BBB",
+        "value2": "8",
+        "value3": "07/05/2023",
+        "field5": ""
+    },
+    {
+        "parameter": "machinesRunning",
+        "value1": "CCC",
+        "value2": "7",
+        "value3": "08/05/2023",
+        "field5": ""
+    },
+    {
+        "parameter": "machinesRunning",
+        "value1": "DDD",
+        "value2": "11",
+        "value3": "09/05/2023",
+        "field5": ""
+    },
+    {
+        "parameter": "capacityConsumed",
+        "heading1": "value1",
+        "heading2": "Capacity consumed per day",
+        "heading3": "Machine ID",
+        "field5": ""
+    },
+    {
+        "parameter": "capacityConsumed",
+        "value1": "06/05/2023",
+        "value2": "1600",
+        "value3": "AAAA",
+        "field5": ""
+    },
+    {
+        "parameter": "capacityConsumed",
+        "value1": "06/05/2023",
+        "value2": "1400",
+        "value3": "BBBB",
+        "field5": ""
+    },
+    {
+        "parameter": "capacityConsumed",
+        "value1": "07/05/2023",
+        "value2": "1450",
+        "value3": "AAAA",
+        "field5": ""
+    },
+    {
+        "parameter": "capacityConsumed",
+        "value1": "08/05/2023",
+        "value2": "1850",
+        "value3": "BBBB",
+        "field5": ""
+    },
+    {
+        "parameter": "capacityConsumed",
+        "value1": "08/05/2023",
+        "value2": "1430",
+        "value3": "AAAA",
+        "field5": ""
+    },
+    {
+        "parameter": "capacityConsumed",
+        "value1": "09/05/2023",
+        "value2": "1600",
+        "value3": "AAAA",
+        "field5": ""
+    },
+    {
+        "parameter": "capacityConsumed",
+        "value1": "09/05/2023",
+        "value2": "1450",
+        "value3": "BBBB",
+        "field5": ""
+    },
+    {
+        "parameter": "capacityConsumed",
+        "value1": "10/05/2023",
+        "value2": "1990",
+        "value3": "AAAA",
+        "field5": ""
+    },
+    {
+        "parameter": "capacityConsumed",
+        "value1": "11/05/2023",
+        "value2": "1400",
+        "value3": "AAAA",
+        "field5": ""
+    },
+    {
+        "parameter": "dataCorrelation",
+        "heading1": "Month Year",
+        "heading2": "GST Sales",
+        "heading3": "Energy consumed",
+        "heading4": "Correlation factor"
+    },
+    {
+        "parameter": "dataCorrelation",
+        "value1": "05/23/2023",
+        "value2": "₹1,50,000",
+        "value3": "1600 kWh",
+        "value4": "93.75"
+    },
+    {
+        "parameter": "dataCorrelation",
+        "value1": "04/23/2023",
+        "value2": "₹1,32,900",
+        "value3": "1450 kWh",
+        "value4": "91.66"
+    },
+    {
+        "parameter": "dataCorrelation",
+        "value1": "03/23/2023",
+        "value2": "₹1,65,000",
+        "value3": "1850 kWh",
+        "value4": "89.19"
+    },
+    {
+        "parameter": "dataCorrelation",
+        "value1": "02/23/2023",
+        "value2": "₹1,45,000",
+        "value3": "1600 kWh",
+        "value4": "90.63"
+    },
+    {
+        "parameter": "dataCorrelation",
+        "value1": "01/23/2023",
+        "value2": "₹1,25,600",
+        "value3": "1990 kWh",
+        "value4": "63.12"
+    },
+    {
+        "parameter": "commodityMetrics",
+        "heading1": "Month Avg Price",
+        "heading2": "Commodity Name",
+        "heading3": "Commodity Price",
+        "value4": ""
+    },
+    {
+        "parameter": "commodityMetrics",
+        "value1": "05/23/2023",
+        "value2": "AAAA",
+        "value3": "123",
+        "value4": ""
+    },
+    {
+        "parameter": "commodityMetrics",
+        "value1": "04/23/2023",
+        "value2": "AAAA",
+        "value3": "143",
+        "value4": ""
+    },
+    {
+        "parameter": "commodityMetrics",
+        "value1": "03/23/2023",
+        "value2": "AAAA",
+        "value3": "126",
+        "value4": ""
+    },
+    {
+        "parameter": "commodityMetrics",
+        "value1": "02/23/2023",
+        "value2": "AAAA",
+        "value3": "134",
+        "value4": ""
+    },
+    {
+        "parameter": "commodityMetrics",
+        "value1": "01/23/2023",
+        "value2": "AAAA",
+        "value3": "132",
+        "value4": ""
+    }
+]
