@@ -50,7 +50,6 @@ export default function BasicTable({ data }) {
       }
     }
   }
-  console.log("correlation factor", data && data[1].value4)
   const dashboardRows = [
     createData(data && data[1].value1, data && data[1].value2, data && data[1].value3 && data[1].value3, data && data[1].value4 && data[1].value4),
     createData(data && data[2].value1, data && data[2].value2, data && data[2].value3 && data[2].value3, data && data[2].value4 && data[2].value4),
@@ -90,8 +89,6 @@ export default function BasicTable({ data }) {
             }
           </TableHead>
           <TableBody>
-
-            {console.log("All data", data)}
             {
               dashboardRows && data ?
                 dashboardRows.map((row) => (

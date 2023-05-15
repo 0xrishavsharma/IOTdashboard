@@ -24,7 +24,6 @@ const Card = (props) => {
     dashboardData.forEach((data) => {
         if (data.parameter == "runtime") {
             runtimeData.push(data);
-            console.log("Runtime data", data)
         }
         else if (data.parameter == "breakdowns") {
             breakdowns.push(data);
@@ -51,13 +50,11 @@ const Card = (props) => {
     const url = `${base}&sheet=${sheetName}&range=${props.range}`;
 
     useEffect(() => {
-        console.log(url);
         const fetchData = async () => {
             fetch(url)
                 .then(res => res.text())
                 .then(rep => {
                     const jsObj = JSON.parse(rep.substring(47).slice(0, -2));
-                    console.log(jsObj);
                 })
         }
         fetchData()
@@ -96,7 +93,7 @@ function CompactCard({ param, setExpanded }) {
                 {/* <CircularProgressbar value={percentage} text={`${percentage}%`} /> */}
                 <span className="text-lg font-semibold">{param.title}</span>
             </div>
-            <div className="flex justify-between items-center">
+            <div className="flex items-center justify-between">
                 {/* <span>Last 24 hours</span> */}
                 <span className="text-3xl font-extrabold">{param.value}</span>
                 {/* <Icon /> */}

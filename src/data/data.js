@@ -9,26 +9,35 @@ import {
     UilMoneyWithdrawal,
 } from "@iconscout/react-unicons";
 
+import { AiOutlineThunderbolt } from "react-icons/ai";
+import { BsBoxes } from "react-icons/bs";
+import { FaPeopleCarry } from "react-icons/fa";
+import { TbTruckDelivery } from "react-icons/tb";
+
 export const sidebarData = [
     {
-        icon: UilEstate,
-        heading: "Dashboard",
+        icon: AiOutlineThunderbolt,
+        heading: "Energy",
     },
     // {
     //     icon: UilClipboardAlt,
     //     heading: "Orders",
     // },
     {
-        icon: UilUsersAlt,
-        heading: "Customers",
+        icon: BsBoxes,
+        heading: "Commodity",
     },
     {
-        icon: UilPackage,
-        heading: "Products",
+        icon: FaPeopleCarry,
+        heading: "Labour/Manpower",
+        disabled: true,
+        tooltip: "Coming Soon",
     },
     {
-        icon: UilChart,
-        heading: "Analytics",
+        icon: TbTruckDelivery,
+        heading: "Supply Chain Data",
+        disabled: true,
+        tooltip: "Coming Soon",
     },
 ]
 
@@ -45,7 +54,6 @@ const commodityMetrics = [];
 dashboardData.forEach((data) => {
     if (data.parameter == "runtime") {
         runtimeData.push(data);
-        console.log("Runtime data", data)
     }
     else if (data.parameter == "breakdowns") {
         breakdowns.push(data);
@@ -64,7 +72,7 @@ dashboardData.forEach((data) => {
     }
 })
 
-export const cardsData = [
+export const energyCards = [
     {
         title: "Average Runtime per day",
         color: {
@@ -155,6 +163,9 @@ export const cardsData = [
             }
         ]
     },
+]
+
+export const commodityCards = [
     {
         title: "Commodity metrics",
         color: {
@@ -173,8 +184,8 @@ export const cardsData = [
             }
         ]
     },
-
 ]
+
 
 import img1 from "../img/img1.png";
 import img2 from "../img/img2.png";

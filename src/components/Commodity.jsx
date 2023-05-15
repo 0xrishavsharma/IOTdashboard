@@ -1,15 +1,14 @@
-import "./Cards.scss";
-import React from 'react';
-import { cardsData } from "../../data/data";
-import Card from "../Card/Card";
+import React from 'react'
+import Card from './Card/Card'
+import { commodityCards } from '../data/data'
 
-const Cards = ({ range }) => {
+const Commodity = ({ range }) => {
     return (
-        <div className="cards">
+        <div className="grid grid-cols-[repeat(auto-fit,_minmax(min(250px,_90%),_1fr))] gap-4 max-[1200px]:flex-col">
             {
-                cardsData.map((card, index) => {
+                commodityCards.map((card, index) => {
                     return (
-                        <div className="parentContainer" key={index}>
+                        <div className="w-full" key={index}>
                             <Card
                                 range={range}
                                 title={card.title}
@@ -29,4 +28,4 @@ const Cards = ({ range }) => {
     )
 }
 
-export default Cards
+export default Commodity

@@ -5,13 +5,13 @@ import MainDash from './components/MainDash/MainDash'
 import RightSide from './components/RightSide/RightSide'
 
 function App() {
-  const [count, setCount] = useState(0)
+  const [currentTab, setCurrentTab] = useState('Energy')
 
   return (
-    <div className="App bg-purple-200">
+    <div className="bg-purple-200 App">
       <div className="appContainer">
-        <Sidebar />
-        <MainDash />
+        <Sidebar currentTab={currentTab} setCurrentTab={setCurrentTab} />
+        <MainDash currentTab={currentTab} />
         {/* <RightSide /> */}
       </div>
     </div>
