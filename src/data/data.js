@@ -42,52 +42,27 @@ export const sidebarData = [
 ]
 
 // Dashboard data
-import dashboardData from "../dashboardData.json"
+// import dashboardData from "../dashboardData.json"
+import {dailyCapacityConsumed, monthlyCapacityConsumed, breakdowns,unitsProduced,sales,dailyUnitsConsumed, profit, commodityMetrics } from "../../dashboardData2.js";
 
-const runtimeData = [];
-const breakdowns = [];
-const machinesRunning = [];
-const capacityConsumed = [];
-const dataCorrelation = [];
-const commodityMetrics = [];
-
-dashboardData.forEach((data) => {
-    if (data.parameter == "runtime") {
-        runtimeData.push(data);
-    }
-    else if (data.parameter == "breakdowns") {
-        breakdowns.push(data);
-    }
-    else if (data.parameter == "machinesRunning") {
-        machinesRunning.push(data);
-    }
-    else if (data.parameter == "capacityConsumed") {
-        capacityConsumed.push(data);
-    }
-    else if (data.parameter == "dataCorrelation") {
-        dataCorrelation.push(data);
-    }
-    else if (data.parameter == "commodityMetrics") {
-        commodityMetrics.push(data);
-    }
-})
 
 export const energyCards = [
     {
-        title: "Average Runtime per day",
+        title: "Average runtime per day",
         color: {
             backGround: "linear-gradient(180deg, #bb67ff 0%, #c484f3 100%)",
             boxShadow: "0px 10px 20px 0px #e0c6f5",
         },
         barValue: 70,
-        value: "10hrs",
-        date: "11/05/23",
+        value1: dailyCapacityConsumed[5].value2,
+        value2: dailyCapacityConsumed[5].value3,
         image: UilUsdSquare,
-        dashboardData: runtimeData,
-        series: [
+        dashboardData: dailyCapacityConsumed[0].tableTwoHeading1 ? monthlyCapacityConsumed : dailyCapacityConsumed,
+                series: [
             {
-                name: "Sales",
+                name: "Runtime",
                 data: [8, 7.5, 7, 8, 9, 10],
+                // data: ,
             }
         ],
     },
@@ -98,8 +73,8 @@ export const energyCards = [
             boxShadow: "0px 10px 20px 0px #fdc0c7",
         },
         barValue: 79,
-        value: "2",
-        date: "11/05/23",
+        value1: breakdowns[5].value3,
+        value2: breakdowns[5].value2,
         image: UilMoneyWithdrawal,
         dashboardData: breakdowns,
         series: [
@@ -110,16 +85,16 @@ export const energyCards = [
         ]
     },
     {
-        title: "Avg. no of machines running per day",
+        title: "Product Unit Produced",
         color: {
             backGround: "linear-gradient(rgb(248, 212, 154) -146.42%, rgb(255, 202, 113) -46.42%)",
             boxShadow: "0px 10px 20px 0px #f9d59b",
         },
         barValue: 73,
-        value: "11hrs",
-        date: "DDD",
+        value1: unitsProduced[5].value3,
+        value2: unitsProduced[5].value2,
         image: UilClipboardAlt,
-        dashboardData: machinesRunning,
+        dashboardData: unitsProduced,
         series: [
             {
                 name: "Expenses",
@@ -128,16 +103,16 @@ export const energyCards = [
         ]
     },
     {
-        title: "Avg. capacity consumed per day",
+        title: "Forecasted vs Actual Sales",
         color: {
             backGround: "linear-gradient(to bottom, #7aabe2, #7a54e2)",
             boxShadow: "0px 10px 20px 0px #575f8d"
         },
         barValue: 73,
-        value: "1400",
-        date: "11/05/23",
+        value1: sales[5].value2,
+        value2: sales[5].value1,
         image: UilClipboardAlt,
-        dashboardData: capacityConsumed,
+        dashboardData: sales,
         series: [
             {
                 name: "Expenses",
@@ -146,16 +121,34 @@ export const energyCards = [
         ]
     },
     {
-        title: "GST & Energy data correlation co-efficient",
+        title: "Daily electricity units consumed",
         color: {
             backGround: "linear-gradient(to bottom, #75df9b, #2878e8)",
             boxShadow: "0px 10px 20px 0px #84ba96"
         },
         barValue: 73,
-        value: "₹1,25,600",
-        date: "01/01/23",
+        value1: dailyUnitsConsumed[5].value2,
+        value2: dailyUnitsConsumed[5].value1,
         image: UilClipboardAlt,
-        dashboardData: dataCorrelation,
+        dashboardData: dailyUnitsConsumed,
+        series: [
+            {
+                name: "Expenses",
+                data: [150000, 132900, 16500, 145000, 125600],
+            }
+        ]
+    },
+    {
+        title: "Forecasted vs Actual Profit",
+        color: {
+            backGround: "linear-gradient(180deg, #9e73ca 0%, #9374c2 50%, #7e73bb 100%)",
+            boxShadow: "0px 10px 20px 0px #b8b6e0",
+        },
+        barValue: 73,
+        value1: profit[5].value2,
+        value2: profit[5].value1,
+        image: UilClipboardAlt,
+        dashboardData: profit,
         series: [
             {
                 name: "Expenses",
@@ -167,14 +160,14 @@ export const energyCards = [
 
 export const commodityCards = [
     {
-        title: "Commodity metrics",
+        title: "Commodity metrics(Oil)",
         color: {
             backGround: "radial-gradient(circle, #f9d9d9, #fb5749)",
             boxShadow: "0px 10px 20px 0px #a5524a"
         },
         barValue: 73,
-        value: "AAAA",
-        date: "01/01/23",
+        value1: commodityMetrics[6].value2,
+        value2: commodityMetrics[6].value1,
         image: UilClipboardAlt,
         dashboardData: commodityMetrics,
         series: [
@@ -185,7 +178,6 @@ export const commodityCards = [
         ]
     },
 ]
-
 
 import img1 from "../img/img1.png";
 import img2 from "../img/img2.png";

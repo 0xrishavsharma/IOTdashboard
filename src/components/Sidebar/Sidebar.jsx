@@ -11,7 +11,7 @@ const Sidebar = ({ currentTab, setCurrentTab }) => {
 
   const tabHandler = (index, item) => {
     !item.disabled && setSelected(index);
-    setCurrentTab(item.heading)
+    !item.disabled && setCurrentTab(item.heading)
   }
   return (
     <div className="sidebar shadow-[rgba(99,99,99,0.2)_0px_2px_8px_0px]">

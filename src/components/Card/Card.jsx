@@ -5,60 +5,13 @@ import { CircularProgressbar } from 'react-circular-progressbar';
 import 'react-circular-progressbar/dist/styles.css';
 import { UilTimes } from "@iconscout/react-unicons";
 import Chart from "react-apexcharts";
-import dashboardData from "../../dashboardData.json";
 import Table from "../Table/Table";
-
+import { dailyCapacityConsumed,monthlyCapacityConsumed, breakdowns, unitsProduced, sales, dailyUnitsConsumed, profit, commodityMetrics } from "../../../dashboardData2";
 
 const Card = (props) => {
     const [expanded, setExpanded] = useState(false);
     const [data, setData] = useState([])
 
-    // Dashboard data
-    const runtimeData = [];
-    const breakdowns = [];
-    const machinesRunning = [];
-    const capacityConsumed = [];
-    const dataCorrelation = [];
-    const commodityMetrics = [];
-
-    dashboardData.forEach((data) => {
-        if (data.parameter == "runtime") {
-            runtimeData.push(data);
-        }
-        else if (data.parameter == "breakdowns") {
-            breakdowns.push(data);
-        }
-        else if (data.parameter == "machinesRunning") {
-            machinesRunning.push(data);
-        }
-        else if (data.parameter == "capacityConsumed") {
-            capacityConsumed.push(data);
-        }
-        else if (data.parameter == "dataCorrelation") {
-            dataCorrelation.push(data);
-        }
-        else if (data.parameter == "commodityMetrics") {
-            commodityMetrics.push(data);
-        }
-    })
-
-    const sheetId = import.meta.env.VITE_SHEET_ID
-    const base = `https://docs.google.com/spreadsheets/d/${sheetId}/gviz/tq?`;
-    const sheetName = 'dashboard';
-    let qu = `Select *`;
-    const query = encodeURIComponent(qu);
-    const url = `${base}&sheet=${sheetName}&range=${props.range}`;
-
-    useEffect(() => {
-        const fetchData = async () => {
-            fetch(url)
-                .then(res => res.text())
-                .then(rep => {
-                    const jsObj = JSON.parse(rep.substring(47).slice(0, -2));
-                })
-        }
-        fetchData()
-    }, [])
     return (
         <AnimateSharedLayout>
             {
@@ -95,64 +48,72 @@ function CompactCard({ param, setExpanded }) {
             </div>
             <div className="flex items-center justify-between">
                 {/* <span>Last 24 hours</span> */}
-                <span className="text-3xl font-extrabold">{param.value}</span>
+                <span className="text-3xl font-extrabold">{param.value1}</span>
                 {/* <Icon /> */}
-                <span className="">{param.date}</span>
+                <span className="">{param.value2}</span>
             </div>
         </motion.div>
     )
 }
 
 function ExpandedCard({ sheetData, param, setExpanded }) {
-    const data = {
-        options: {
-            chart: {
-                type: "area",
-                height: "auto",
-            },
-            dropShadow: {
-                enabled: false,
-                enabledOnSeries: undefined,
-                top: 0,
-                left: 0,
-                blur: 3,
-                color: "#000",
-                opacity: 0.35,
-            },
-            fill: {
-                color: ["#fff"],
-                type: "gradient",
-            },
-            dataLabels: {
-                enabled: false,
-            },
-            stroke: {
-                curve: "smooth",
-                colors: ["white"]
-            },
-            tooltip: {
-                x: {
-                    format: "dd/MM/yy HH:mm",
-                },
-            },
-            grid: {
-                show: true,
-            },
-            xaxis: {
-                type: "datetime",
-                categories: [
-                    "2018-09-19T00:00:000Z",
-                    "2018-09-19T01:00:000Z",
-                    "2018-09-19T02:00:000Z",
-                    "2018-09-19T03:00:000Z",
-                    "2018-09-19T04:00:000Z",
-                    "2018-09-19T05:00:000Z",
-                    "2018-09-19T06:00:000Z",
-                ],
-            }
+    
+    console.log("Dashboard data", (param.dashboardData[0].parameter2 && "parameter2"))
+    
+    var options = {
+        series: [{
+        name: 'Net Profit',
+        data: [44, 55, 57, 56, 61, 58, 63, 60, 66]
+      }, {
+        name: 'Revenue',
+        data: [76, 85, 101, 98, 87, 105, 91, 114, 94]
+      }, {
+        name: 'Free Cash Flow',
+        data: [35, 41, 36, 26, 45, 48, 52, 53, 41]
+      }],
+        chart: {
+        type: 'bar',
+        height: 350
+      },
+      plotOptions: {
+        bar: {
+          horizontal: false,
+          columnWidth: '55%',
+          endingShape: 'rounded'
         },
-    }
+      },
+      dataLabels: {
+        enabled: false
+      },
+      stroke: {
+        show: true,
+        width: 2,
+        colors: ['transparent']
+      },
+      xaxis: {
+        categories: ['Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct'],
+      },
+      yaxis: {
+        title: {
+          text: '$ (thousands)'
+        }
+      },
+      fill: {
+        opacity: 1
+      },
+      tooltip: {
+        y: {
+          formatter: function (val) {
+            return "$ " + val + " thousands"
+          }
+        }
+      }
+      };
 
+      var chart = new ApexCharts(document.querySelector("#chart"), options);
+      chart.render();
+    
+    
     return (
         <motion.div className="expandedCard"
             style={{
@@ -167,9 +128,12 @@ function ExpandedCard({ sheetData, param, setExpanded }) {
             <span>{param.title}</span>
             <div>
                 <Table data={param.dashboardData} />
+                {
+                    param.dashboardData[0].parameter2 && <Table data={param.dashboardData} />
+                }
             </div>
             <div className="chartContainer">
-                <Chart series={param.series} type="area" options={data.options} height="300px" width="500px" />
+                <Chart series={param.series} type="bar" options={options} height="300px" width="500px" id="chart" />
             </div>
             {/* <span>Last 24 hours</span> */}
 

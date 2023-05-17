@@ -64,10 +64,28 @@ export default function BasicTable({ data }) {
         style={{ boxShadow: "0px 13px 20px 0px #80808029", borderRadius: "1rem" }}
       >
         <Table sx={{ minWidth: 650 }} aria-label="simple table">
+          {
+            console.log("Data from expanded table", data)
+          }
           <TableHead>
             {
               data ?
-                <TableRow>
+                (
+                  data[0].parameter2 ? 
+                  <TableRow>
+                    <TableCell>{data[0].heading1}</TableCell>
+                    <TableCell align="left">{data[0].heading2}</TableCell>
+                    {
+                      data[0].heading3 &&
+                      <TableCell align="left">{data[0].heading3}</TableCell>
+                    }
+                    {
+                      data[0].heading4 &&
+                      <TableCell align="left">{data[0].heading4}</TableCell>
+                    }
+                  </TableRow>
+                  :
+                  <TableRow>
                   <TableCell>{data[0].heading1}</TableCell>
                   <TableCell align="left">{data[0].heading2}</TableCell>
                   {
@@ -79,6 +97,7 @@ export default function BasicTable({ data }) {
                     <TableCell align="left">{data[0].heading4}</TableCell>
                   }
                 </TableRow>
+                )
                 :
                 <TableRow>
                   <TableCell>Product</TableCell>
