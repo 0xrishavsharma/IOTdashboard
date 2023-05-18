@@ -57,9 +57,7 @@ function CompactCard({ param, setExpanded }) {
 }
 
 function ExpandedCard({ sheetData, param, setExpanded }) {
-    
-    console.log("Dashboard data", (param.dashboardData[0].parameter2 && "parameter2"))
-    
+  
     var options = {
         series: [{
         name: 'Net Profit',
@@ -129,14 +127,12 @@ function ExpandedCard({ sheetData, param, setExpanded }) {
             <div>
                 <Table data={param.dashboardData} />
                 {
-                    param.dashboardData[0].parameter2 && <Table data={param.dashboardData} />
+                     <Table data={param.dashboardData} />
                 }
             </div>
             <div className="chartContainer">
                 <Chart series={param.series} type="bar" options={options} height="300px" width="500px" id="chart" />
             </div>
-            {/* <span>Last 24 hours</span> */}
-
         </motion.div>
     )
 }
