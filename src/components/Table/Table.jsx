@@ -49,140 +49,140 @@ export default function BasicTable({ data }) {
 	const dashboardRows = [];
 	for (let i = 0; i < data.length; i++) {
 		dashboardRows.push([]);
+
 		dashboardRows[i].push(
 			createData(
-				data && data[i][1].value1,
-				data && data[i][1].value2,
-				data && data[i][1].value3 && data[i][1].value3,
-				data && data[i][1].value4 && data[i][1].value4
+				data && (data[i][1] ? data[i][1].value1 : data[1].value1),
+				data && (data[i][1] ? data[i][1].value2 : data[1].value2),
+				data && (data[i][1] ? data[i][1].value3 : data[1].value3),
+				data && (data[i][1] ? data[i][1].value4 : data[1].value4)
 			),
 			createData(
-				data && data[i][2].value1,
-				data && data[i][2].value2,
-				data && data[i][2].value3 && data[i][2].value3,
-				data && data[i][2].value4 && data[i][2].value4
+				data && (data[i][2] ? data[i][2].value1 : data[2].value1),
+				data && (data[i][2] ? data[i][2].value2 : data[2].value2),
+				data && (data[i][2] ? data[i][2].value3 : data[2].value3),
+				data && (data[i][2] ? data[i][2].value4 : data[2].value4)
 			),
 			createData(
-				data && data[i][3].value1,
-				data && data[i][3].value2,
-				data && data[i][3].value3 && data[i][3].value3,
-				data && data[i][3].value4 && data[i][3].value4
+				data && (data[i][3] ? data[i][3].value1 : data[3].value1),
+				data && (data[i][3] ? data[i][3].value2 : data[3].value2),
+				data && (data[i][3] ? data[i][3].value3 : data[3].value3),
+				data && (data[i][3] ? data[i][3].value4 : data[3].value4)
 			),
 			createData(
-				data && data[i][4].value1,
-				data && data[i][4].value2,
-				data && data[i][4].value3 && data[i][4].value3,
-				data && data[i][4].value4 && data[i][4].value4
+				data && (data[i][4] ? data[i][4].value1 : data[4].value1),
+				data && (data[i][4] ? data[i][4].value2 : data[4].value2),
+				data && (data[i][4] ? data[i][4].value3 : data[4].value3),
+				data && (data[i][4] ? data[i][4].value4 : data[4].value4)
+			),
+			createData(
+				data && (data[i][5] ? data[i][5].value1 : data[5].value1),
+				data && (data[i][5] ? data[i][5].value2 : data[5].value2),
+				data && (data[i][5] ? data[i][5].value3 : data[5].value3),
+				data && (data[i][5] ? data[i][5].value4 : data[5].value4)
+			),
+			createData(
+				data && (data[i][6] ? data[i][6].value1 : data[6].value1),
+				data && (data[i][6] ? data[i][6].value2 : data[6].value2),
+				data && (data[i][6] ? data[i][6].value3 : data[6].value3),
+				data && (data[i][6] ? data[i][6].value4 : data[6].value4)
 			)
 		);
 	}
-
 	return (
 		<div className="table">
 			<h3>{!data && "Recent Transactions"}</h3>
-			<TableContainer
-				component={Paper}
-				style={{
-					boxShadow: "0px 13px 20px 0px #80808029",
-					borderRadius: "1rem",
-				}}>
-				{dashboardRows.map((mainRow, index) => {
+			<div className="flex gap-12">
+				{dashboardRows.map((mainRow, i) => {
 					return (
-						<Table sx={{ minWidth: 650 }} aria-label="simple table">
-							<TableHead>
-								{data ? (
-									data[0].parameter2 ? (
+						<TableContainer
+							key={i + 1}
+							component={Paper}
+							className="mb-8 shadow-[0px_13px_20px_0px_#80808029] rounded-lg">
+							<Table sx={{ minWidth: 300 }} aria-label="simple table">
+								<TableHead>
+									{data ? (
 										<TableRow>
-											<TableCell>{data[0][0].heading1}</TableCell>
-											<TableCell align="left">{data[0][0].heading2}</TableCell>
-											{data[0].heading3 && (
+											<TableCell>
+												{(data[i][0] && data[i][0].heading1) ||
+													data[0].heading1}
+											</TableCell>
+											<TableCell align="left">
+												{data[i][0] ? data[i][0].heading2 : data[0].heading2}
+											</TableCell>
+											{(data[0][0].heading3 || data[0].heading3) && (
 												<TableCell align="left">
-													{data[0][0].heading3}
+													{data[0][0] ? data[0][0].heading3 : data[0].heading3}
 												</TableCell>
 											)}
-											{data[0].heading4 && (
+											{(data[0][0].heading4 || data[0].heading4) && (
 												<TableCell align="left">
-													{data[0][0].heading4}
+													{data[0][0] ? data[0][0].heading4 : data[0].heading4}
 												</TableCell>
 											)}
 										</TableRow>
 									) : (
 										<TableRow>
-											<TableCell>{data[0][0].heading1}</TableCell>
-											<TableCell align="left">{data[0][0].heading2}</TableCell>
-											{data[0].heading3 && (
-												<TableCell align="left">
-													{data[0][0].heading3}
-												</TableCell>
-											)}
-											{data[0].heading4 && (
-												<TableCell align="left">
-													{data[0][0].heading4}
-												</TableCell>
-											)}
+											<TableCell>Product</TableCell>
+											<TableCell align="left">Order Id</TableCell>
+											<TableCell align="left">Date&nbsp;</TableCell>
+											<TableCell align="left">Status&nbsp;</TableCell>
 										</TableRow>
-									)
-								) : (
-									<TableRow>
-										<TableCell>Product</TableCell>
-										<TableCell align="left">Order Id</TableCell>
-										<TableCell align="left">Date&nbsp;</TableCell>
-										<TableCell align="left">Status&nbsp;</TableCell>
-									</TableRow>
-								)}
-							</TableHead>
-							<TableBody>
-								{dashboardRows && data
-									? mainRow.map((row) => (
-											<TableRow
-												key={row.product}
-												sx={{
-													"&:last-child td, &:last-child th": { border: 0 },
-												}}>
-												<TableCell component="th" scope="row">
-													{row.product}
-												</TableCell>
-												<TableCell align="left">{row.orderId}</TableCell>
-												<TableCell align="left">{row.date}</TableCell>
-												{data && (
-													<TableCell align="left">
-														<p className="status">{row.status}</p>
+									)}
+								</TableHead>
+								<TableBody>
+									{dashboardRows
+										? mainRow.map((row, i) => (
+												<TableRow
+													key={i}
+													sx={{
+														"&:last-child td, &:last-child th": { border: 0 },
+													}}>
+													<TableCell component="th" scope="row">
+														{row.product}
 													</TableCell>
-												)}
-											</TableRow>
-									  ))
-									: rows.map((row) => (
-											<TableRow
-												key={row.product}
-												sx={{
-													"&:last-child td, &:last-child th": { border: 0 },
-												}}>
-												<TableCell component="th" scope="row">
-													{row.product}
-												</TableCell>
-												<TableCell align="left">{row.orderId}</TableCell>
-												<TableCell align="left">{row.date}</TableCell>
-												{!data && (
-													<TableCell align="left">
-														<span
-															className="status"
-															style={makeStyles(row.status)}>
-															{row.status}
-														</span>
+													<TableCell align="left">{row.orderId}</TableCell>
+													<TableCell align="left">{row.date}</TableCell>
+													{data && (
+														<TableCell align="left">
+															<p className="status">{row.status}</p>
+														</TableCell>
+													)}
+												</TableRow>
+										  ))
+										: mainRow.map((row, i) => (
+												<TableRow
+													key={i}
+													sx={{
+														"&:last-child td, &:last-child th": { border: 0 },
+													}}>
+													<TableCell component="th" scope="row">
+														{row.product}
 													</TableCell>
-												)}
-												{!data && (
-													<TableCell align="left" className="details">
-														details
-													</TableCell>
-												)}
-											</TableRow>
-									  ))}
-							</TableBody>
-						</Table>
+													<TableCell align="left">{row.orderId}</TableCell>
+													<TableCell align="left">{row.date}</TableCell>
+													{!data && (
+														<TableCell align="left">
+															<span
+																className="status"
+																style={makeStyles(row.status)}>
+																{row.status}
+															</span>
+														</TableCell>
+													)}
+													{!data && (
+														<TableCell align="left" className="details">
+															details
+														</TableCell>
+													)}
+												</TableRow>
+										  ))}
+								</TableBody>
+							</Table>
+						</TableContainer>
 					);
 				})}
-			</TableContainer>
+			</div>
 		</div>
 	);
 }

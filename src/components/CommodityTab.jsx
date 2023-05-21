@@ -14,18 +14,7 @@ const Commodity = ({ range }) => {
 			{commodityCards.map((card, index) => {
 				return (
 					<div className="w-full" key={index}>
-						<Card
-							range={range}
-							title={card.title}
-							color={card.color}
-							barValue={card.barValue}
-							value1={card.value1}
-							value2={card.value1}
-							date={card.date}
-							dashboardData={card.dashboardData}
-							image={card.image}
-							series={card.series}
-						/>
+						<Card range={range} data={card} />
 					</div>
 				);
 			})}

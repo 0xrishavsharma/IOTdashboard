@@ -51,7 +51,7 @@ import {
 
 export const energyCards = [
 	{
-		title: "Average runtime per day",
+		title: "Average capacity consumed",
 		color: {
 			backGround: "linear-gradient(180deg, #bb67ff 0%, #c484f3 100%)",
 			boxShadow: "0px 10px 20px 0px #e0c6f5",
@@ -60,13 +60,59 @@ export const energyCards = [
 		value1: dailyCapacityConsumed[5].value1,
 		value2: dailyCapacityConsumed[5].value2,
 		image: UilUsdSquare,
-		dashboardData: [monthlyCapacityConsumed, dailyCapacityConsumed],
-		// dashboardData: monthlyCapacityConsumed,
+		dashboardData: [dailyCapacityConsumed, monthlyCapacityConsumed],
 		series: [
+			[
+				{
+					name: "Runtime",
+					data: [1265, 1283, 1451, 1325, 1386, 1385],
+				},
+			],
+			[
+				{
+					name: "Runtime",
+					data: [13022, 12063, 14509, 12061, 14222, 14619],
+				},
+			],
+		],
+		xaxis: [
 			{
-				name: "Runtime",
-				data: [8, 7.5, 7, 8, 9, 10],
-				// data: ,
+				title: {
+					text: "Date",
+				},
+				categories: [
+					"06/05/23",
+					"07/05/23",
+					"08/05/23",
+					"08/05/23",
+					"10/05/23",
+					"11/05/23",
+				],
+			},
+			{
+				title: {
+					text: "Date",
+				},
+				categories: [
+					"06/05/23",
+					"07/05/23",
+					"08/05/23",
+					"08/05/23",
+					"10/05/23",
+					"11/05/23",
+				],
+			},
+		],
+		yaxis: [
+			{
+				title: {
+					text: "kWh",
+				},
+			},
+			{
+				title: {
+					text: "kWh",
+				},
 			},
 		],
 	},
@@ -80,11 +126,35 @@ export const energyCards = [
 		value1: breakdowns[5].value3,
 		value2: breakdowns[5].value2,
 		image: UilMoneyWithdrawal,
-		dashboardData: breakdowns,
+		dashboardData: [breakdowns],
 		series: [
+			[
+				{
+					name: "Revenue",
+					data: [1, 2, 0.5, 0, 1, 2],
+				},
+			],
+		],
+		xaxis: [
 			{
-				name: "Revenue",
-				data: [1, 2, 0.5, 0, 1, 2],
+				title: {
+					text: "Date",
+				},
+				categories: [
+					"06/05/23",
+					"07/05/23",
+					"08/05/23",
+					"08/05/23",
+					"10/05/23",
+					"11/05/23",
+				],
+			},
+		],
+		yaxis: [
+			{
+				title: {
+					text: "kWh",
+				},
 			},
 		],
 	},
@@ -99,11 +169,35 @@ export const energyCards = [
 		value1: unitsProduced[5].value3,
 		value2: unitsProduced[5].value2,
 		image: UilClipboardAlt,
-		dashboardData: unitsProduced,
+		dashboardData: [unitsProduced],
 		series: [
+			[
+				{
+					name: "Expenses",
+					data: [9, 8, 7, 11, 12],
+				},
+			],
+		],
+		xaxis: [
 			{
-				name: "Expenses",
-				data: [9, 8, 7, 11, 12],
+				title: {
+					text: "Date",
+				},
+				categories: [
+					"06/05/23",
+					"07/05/23",
+					"08/05/23",
+					"08/05/23",
+					"10/05/23",
+					"11/05/23",
+				],
+			},
+		],
+		yaxis: [
+			{
+				title: {
+					text: "kWh",
+				},
 			},
 		],
 	},
@@ -117,11 +211,35 @@ export const energyCards = [
 		value1: sales[5].value2,
 		value2: sales[5].value1,
 		image: UilClipboardAlt,
-		dashboardData: sales,
+		dashboardData: [sales],
 		series: [
+			[
+				{
+					name: "Expenses",
+					data: [1600, 1400, 1450, 1850, 1430, 1600, 1450, 1990, 1400],
+				},
+			],
+		],
+		xaxis: [
 			{
-				name: "Expenses",
-				data: [1600, 1400, 1450, 1850, 1430, 1600, 1450, 1990, 1400],
+				title: {
+					text: "Date",
+				},
+				categories: [
+					"06/05/23",
+					"07/05/23",
+					"08/05/23",
+					"08/05/23",
+					"10/05/23",
+					"11/05/23",
+				],
+			},
+		],
+		yaxis: [
+			{
+				title: {
+					text: "kWh",
+				},
 			},
 		],
 	},
@@ -135,11 +253,35 @@ export const energyCards = [
 		value1: dailyUnitsConsumed[5].value2,
 		value2: dailyUnitsConsumed[5].value1,
 		image: UilClipboardAlt,
-		dashboardData: dailyUnitsConsumed,
+		dashboardData: [dailyUnitsConsumed],
 		series: [
+			[
+				{
+					name: "Expenses",
+					data: [150000, 132900, 16500, 145000, 125600],
+				},
+			],
+		],
+		xaxis: [
 			{
-				name: "Expenses",
-				data: [150000, 132900, 16500, 145000, 125600],
+				title: {
+					text: "Date",
+				},
+				categories: [
+					"06/05/23",
+					"07/05/23",
+					"08/05/23",
+					"08/05/23",
+					"10/05/23",
+					"11/05/23",
+				],
+			},
+		],
+		yaxis: [
+			{
+				title: {
+					text: "kWh",
+				},
 			},
 		],
 	},
@@ -154,11 +296,35 @@ export const energyCards = [
 		value1: profit[5].value2,
 		value2: profit[5].value1,
 		image: UilClipboardAlt,
-		dashboardData: profit,
+		dashboardData: [profit],
 		series: [
+			[
+				{
+					name: "Expenses",
+					data: [150000, 132900, 16500, 145000, 125600],
+				},
+			],
+		],
+		xaxis: [
 			{
-				name: "Expenses",
-				data: [150000, 132900, 16500, 145000, 125600],
+				title: {
+					text: "Date",
+				},
+				categories: [
+					"06/05/23",
+					"07/05/23",
+					"08/05/23",
+					"08/05/23",
+					"10/05/23",
+					"11/05/23",
+				],
+			},
+		],
+		yaxis: [
+			{
+				title: {
+					text: "kWh",
+				},
 			},
 		],
 	},
@@ -175,11 +341,36 @@ export const commodityCards = [
 		value1: commodityMetrics[6].value2,
 		value2: commodityMetrics[6].value1,
 		image: UilClipboardAlt,
-		dashboardData: commodityMetrics,
+		dashboardData: [commodityMetrics],
 		series: [
+			[
+				{
+					name: "Expenses",
+					data: [124, 143, 126, 134, 132],
+				},
+			],
+		],
+
+		xaxis: [
 			{
-				name: "Expenses",
-				data: [124, 143, 126, 134, 132],
+				title: {
+					text: "Date",
+				},
+				categories: [
+					"06/05/23",
+					"07/05/23",
+					"08/05/23",
+					"08/05/23",
+					"10/05/23",
+					"11/05/23",
+				],
+			},
+		],
+		yaxis: [
+			{
+				title: {
+					text: "kWh",
+				},
 			},
 		],
 	},
