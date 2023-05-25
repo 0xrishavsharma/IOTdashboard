@@ -98,7 +98,8 @@ function ExpandedCard({ sheetData, data, setExpanded }) {
 			tooltip: {
 				y: {
 					formatter: function (val) {
-						return "$ " + val + " thousands";
+						// return "$ " + val + " thousands";
+						return val;
 					},
 				},
 			},
@@ -115,7 +116,9 @@ function ExpandedCard({ sheetData, data, setExpanded }) {
 			<div style={{ alignSelf: "flex-end", cursor: "pointer", color: "white" }}>
 				<UilTimes onClick={setExpanded} />
 			</div>
-			<span className="mb-4 font-black uppercase">{data.title}</span>
+			<span className="mb-4 text-4xl font-black text-white uppercase">
+				{data.title}
+			</span>
 			<div>
 				<Table data={data.dashboardData} />
 			</div>
