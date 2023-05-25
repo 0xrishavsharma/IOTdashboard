@@ -52,6 +52,7 @@ import {
 export const energyCards = [
 	{
 		title: "Average capacity consumed",
+		chartTitle: ["Daily capacity consumed", "Monthly capacity consumed"],
 		color: {
 			backGround: "linear-gradient(180deg, #bb67ff 0%, #c484f3 100%)",
 			boxShadow: "0px 10px 20px 0px #e0c6f5",
@@ -91,16 +92,9 @@ export const energyCards = [
 			},
 			{
 				title: {
-					text: "Date",
+					text: "Month",
 				},
-				categories: [
-					"06/05/23",
-					"07/05/23",
-					"08/05/23",
-					"08/05/23",
-					"10/05/23",
-					"11/05/23",
-				],
+				categories: ["01/23", "02/23", "03/23", "04/23", "05/23", "06/23"],
 			},
 		],
 		yaxis: [
@@ -118,6 +112,7 @@ export const energyCards = [
 	},
 	{
 		title: "No. of breakdowns per day",
+		chartTitle: ["Count of breakdowns", "Breakdown count and Hours lost"],
 		color: {
 			backGround: "linear-gradient(180deg, #ff919D 0%, #fc929d 100%)",
 			boxShadow: "0px 10px 20px 0px #fdc0c7",
@@ -130,12 +125,36 @@ export const energyCards = [
 		series: [
 			[
 				{
-					name: "Revenue",
+					name: "Breakdowns",
 					data: [1, 2, 0.5, 0, 1, 2],
+				},
+			],
+			[
+				{
+					name: "Breakdowns",
+					data: [1, 2, 0.5, 0, 1, 2],
+				},
+				{
+					name: "Hours lost",
+					data: [1, 3, 1, 0, 3, 1],
 				},
 			],
 		],
 		xaxis: [
+			{
+				title: {
+					text: "Date",
+				},
+				categories: [
+					"06/05/23",
+					"07/05/23",
+					"08/05/23",
+					"08/05/23",
+					"10/05/23",
+					"11/05/23",
+				],
+				fillColor: "#ff919D",
+			},
 			{
 				title: {
 					text: "Date",
@@ -156,10 +175,16 @@ export const energyCards = [
 					text: "kWh",
 				},
 			},
+			{
+				title: {
+					text: "kWh",
+				},
+			},
 		],
 	},
 	{
 		title: "Product Unit Produced",
+		chartTitle: ["Daily Units Produced", "Monthly Units Produced"],
 		color: {
 			backGround:
 				"linear-gradient(rgb(248, 212, 154) -146.42%, rgb(255, 202, 113) -46.42%)",
@@ -173,8 +198,14 @@ export const energyCards = [
 		series: [
 			[
 				{
-					name: "Expenses",
-					data: [9, 8, 7, 11, 12],
+					name: "Daily",
+					data: [1441, 1489, 1494, 1448, 1212, 1491],
+				},
+			],
+			[
+				{
+					name: "Monthly",
+					data: [43230, 44670, 44820, 44330, 36360, 44730],
 				},
 			],
 		],
@@ -192,17 +223,36 @@ export const energyCards = [
 					"11/05/23",
 				],
 			},
+			{
+				title: {
+					text: "Date",
+				},
+				categories: [
+					"06/05/23",
+					"07/05/23",
+					"08/05/23",
+					"08/05/23",
+					"10/05/23",
+					"11/05/23",
+				],
+			},
 		],
 		yaxis: [
 			{
 				title: {
-					text: "kWh",
+					text: "Quantity",
+				},
+			},
+			{
+				title: {
+					text: "Quantity",
 				},
 			},
 		],
 	},
 	{
 		title: "Forecasted vs Actual Sales",
+		chartTitle: ["Forecasted vs Actual Sales"],
 		color: {
 			backGround: "linear-gradient(to bottom, #7aabe2, #7a54e2)",
 			boxShadow: "0px 10px 20px 0px #575f8d",
@@ -215,8 +265,12 @@ export const energyCards = [
 		series: [
 			[
 				{
-					name: "Expenses",
-					data: [1600, 1400, 1450, 1850, 1430, 1600, 1450, 1990, 1400],
+					name: "Forecasted",
+					data: [666566, 660042, 694867, 667783, 655410, 608617],
+				},
+				{
+					name: "Actual",
+					data: [608215, 615928, 611163],
 				},
 			],
 		],
@@ -257,8 +311,14 @@ export const energyCards = [
 		series: [
 			[
 				{
-					name: "Expenses",
-					data: [150000, 132900, 16500, 145000, 125600],
+					name: "Daily",
+					data: [1193, 1391, 1359, 1242, 1360, 1421],
+				},
+			],
+			[
+				{
+					name: "Monthly",
+					data: [35790, 41730, 77520],
 				},
 			],
 		],
@@ -271,22 +331,37 @@ export const energyCards = [
 					"06/05/23",
 					"07/05/23",
 					"08/05/23",
-					"08/05/23",
+					"09/05/23",
 					"10/05/23",
 					"11/05/23",
 				],
+			},
+			{
+				title: {
+					text: "Month",
+				},
+				categories: ["Apr", "May", "Total Result"],
 			},
 		],
 		yaxis: [
 			{
 				title: {
-					text: "kWh",
+					text: "Energy",
+				},
+			},
+			{
+				title: {
+					text: "Energy",
 				},
 			},
 		],
 	},
 	{
 		title: "Forecasted vs Actual Profit",
+		chartTitle: [
+			"Projected and Actual Turnover",
+			"Projected and Actual Profit",
+		],
 		color: {
 			backGround:
 				"linear-gradient(180deg, #9e73ca 0%, #9374c2 50%, #7e73bb 100%)",
@@ -300,30 +375,48 @@ export const energyCards = [
 		series: [
 			[
 				{
-					name: "Expenses",
-					data: [150000, 132900, 16500, 145000, 125600],
+					name: "Projected",
+					data: [686543, 603022, 632532, 640013, 611302, 623657],
+				},
+				{
+					name: "Actual",
+					data: [680594, 635669, 646142],
+				},
+			],
+			[
+				{
+					name: "Projected",
+					data: [217356, 213367, 127732, 206277, 134045, 129504],
+				},
+				{
+					name: "Actual",
+					data: [157628, 150945, 152757, 640013],
 				},
 			],
 		],
 		xaxis: [
 			{
 				title: {
-					text: "Date",
+					text: "Month",
 				},
-				categories: [
-					"06/05/23",
-					"07/05/23",
-					"08/05/23",
-					"08/05/23",
-					"10/05/23",
-					"11/05/23",
-				],
+				categories: ["Jan", "Feb", "Mar", "Apr", "May", "Jun"],
+			},
+			{
+				title: {
+					text: "Month",
+				},
+				categories: ["Jan", "Feb", "Mar", "Apr", "May", "Jun"],
 			},
 		],
 		yaxis: [
 			{
 				title: {
-					text: "kWh",
+					text: "Profit(₹)",
+				},
+			},
+			{
+				title: {
+					text: "Profit(₹)",
 				},
 			},
 		],
@@ -333,6 +426,7 @@ export const energyCards = [
 export const commodityCards = [
 	{
 		title: "Commodity metrics(Oil)",
+		chartTitle: ["Oil Prices - Month"],
 		color: {
 			backGround: "radial-gradient(circle, #f9d9d9, #fb5749)",
 			boxShadow: "0px 10px 20px 0px #a5524a",
@@ -345,8 +439,18 @@ export const commodityCards = [
 		series: [
 			[
 				{
-					name: "Expenses",
-					data: [124, 143, 126, 134, 132],
+					name: "Oil Prices($)",
+					data: [123.5, 928.6, 518.1, 933.3, 1018, 955.2],
+				},
+			],
+			[
+				{
+					name: "Energy Units",
+					data: [1974, 2138, 2217, 1859, 2259, 1659],
+				},
+				{
+					name: "Quantity Dispatched",
+					data: [33450, 26410, 30504, 28863, 25485, 26192],
 				},
 			],
 		],
@@ -354,22 +458,26 @@ export const commodityCards = [
 		xaxis: [
 			{
 				title: {
-					text: "Date",
+					text: "Month",
 				},
-				categories: [
-					"06/05/23",
-					"07/05/23",
-					"08/05/23",
-					"08/05/23",
-					"10/05/23",
-					"11/05/23",
-				],
+				categories: ["Jan", "Feb", "Mar", "Apr", "May", "Jun"],
+			},
+			{
+				title: {
+					text: "Month",
+				},
+				categories: ["Jan", "Feb", "Mar", "Apr", "May", "Jun"],
 			},
 		],
 		yaxis: [
 			{
 				title: {
-					text: "kWh",
+					text: "Prices($)",
+				},
+			},
+			{
+				title: {
+					text: "",
 				},
 			},
 		],
@@ -379,6 +487,7 @@ export const commodityCards = [
 import img1 from "../img/img1.png";
 import img2 from "../img/img2.png";
 import img3 from "../img/img3.png";
+import { data } from "autoprefixer";
 
 export const updatesData = [
 	{

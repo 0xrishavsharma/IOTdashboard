@@ -89,97 +89,121 @@ export default function BasicTable({ data }) {
 			)
 		);
 	}
+
+	const tableBorderRadius = "0px 0px 4px 4px";
 	return (
 		<div className="table">
 			<h3>{!data && "Recent Transactions"}</h3>
 			<div className="flex gap-12">
 				{dashboardRows.map((mainRow, i) => {
 					return (
-						<TableContainer
-							key={i + 1}
-							component={Paper}
-							className="mb-8 shadow-[0px_13px_20px_0px_#80808029] rounded-lg">
-							<Table sx={{ minWidth: 300 }} aria-label="simple table">
-								<TableHead>
-									{data ? (
-										<TableRow>
-											<TableCell>
-												{(data[i][0] && data[i][0].heading1) ||
-													data[0].heading1}
-											</TableCell>
-											<TableCell align="left">
-												{data[i][0] ? data[i][0].heading2 : data[0].heading2}
-											</TableCell>
-											{(data[0][0].heading3 || data[0].heading3) && (
-												<TableCell align="left">
-													{data[0][0] ? data[0][0].heading3 : data[0].heading3}
-												</TableCell>
-											)}
-											{(data[0][0].heading4 || data[0].heading4) && (
-												<TableCell align="left">
-													{data[0][0] ? data[0][0].heading4 : data[0].heading4}
-												</TableCell>
-											)}
-										</TableRow>
-									) : (
-										<TableRow>
-											<TableCell>Product</TableCell>
-											<TableCell align="left">Order Id</TableCell>
-											<TableCell align="left">Date&nbsp;</TableCell>
-											<TableCell align="left">Status&nbsp;</TableCell>
-										</TableRow>
-									)}
-								</TableHead>
-								<TableBody>
-									{dashboardRows
-										? mainRow.map((row, i) => (
-												<TableRow
-													key={i}
-													sx={{
-														"&:last-child td, &:last-child th": { border: 0 },
-													}}>
-													<TableCell component="th" scope="row">
-														{row.product}
+						<div key={i + 1}>
+							{data[i][0]?.heading && (
+								<h2 className="px-2 py-1 text-lg font-black text-white border-2 border-b-0 border-white rounded-tr-md rounded-tl-md ">
+									{data[i][0]?.heading}
+								</h2>
+							)}
+							<TableContainer
+								component={Paper}
+								className="mb-8 shadow-[0px_13px_20px_0px_#80808029]"
+								style={{
+									background: "none",
+									borderRadius: `${data[i][0]?.heading && "0px 0px 4px 4px"}`,
+								}}>
+								<div className="bg-white">
+									<Table sx={{ minWidth: 300 }} aria-label="simple table">
+										<TableHead>
+											{data ? (
+												<TableRow>
+													<TableCell>
+														{(data[i][0] && data[i][0].heading1) ||
+															data[0].heading1}
 													</TableCell>
-													<TableCell align="left">{row.orderId}</TableCell>
-													<TableCell align="left">{row.date}</TableCell>
-													{data && (
+													<TableCell align="left">
+														{data[i][0]
+															? data[i][0].heading2
+															: data[0].heading2}
+													</TableCell>
+													{(data[0][0].heading3 || data[0].heading3) && (
 														<TableCell align="left">
-															<p className="status">{row.status}</p>
+															{data[0][0]
+																? data[0][0].heading3
+																: data[0].heading3}
+														</TableCell>
+													)}
+													{(data[0][0].heading4 || data[0].heading4) && (
+														<TableCell align="left">
+															{data[0][0]
+																? data[0][0].heading4
+																: data[0].heading4}
 														</TableCell>
 													)}
 												</TableRow>
-										  ))
-										: mainRow.map((row, i) => (
-												<TableRow
-													key={i}
-													sx={{
-														"&:last-child td, &:last-child th": { border: 0 },
-													}}>
-													<TableCell component="th" scope="row">
-														{row.product}
-													</TableCell>
-													<TableCell align="left">{row.orderId}</TableCell>
-													<TableCell align="left">{row.date}</TableCell>
-													{!data && (
-														<TableCell align="left">
-															<span
-																className="status"
-																style={makeStyles(row.status)}>
-																{row.status}
-															</span>
-														</TableCell>
-													)}
-													{!data && (
-														<TableCell align="left" className="details">
-															details
-														</TableCell>
-													)}
+											) : (
+												<TableRow>
+													<TableCell>Product</TableCell>
+													<TableCell align="left">Order Id</TableCell>
+													<TableCell align="left">Date&nbsp;</TableCell>
+													<TableCell align="left">Status&nbsp;</TableCell>
 												</TableRow>
-										  ))}
-								</TableBody>
-							</Table>
-						</TableContainer>
+											)}
+										</TableHead>
+										<TableBody>
+											{dashboardRows
+												? mainRow.map((row, i) => (
+														<TableRow
+															key={i}
+															sx={{
+																"&:last-child td, &:last-child th": {
+																	border: 0,
+																},
+															}}>
+															<TableCell component="th" scope="row">
+																{row.product}
+															</TableCell>
+															<TableCell align="left">{row.orderId}</TableCell>
+															<TableCell align="left">{row.date}</TableCell>
+															{data && (
+																<TableCell align="left">
+																	<p className="status">{row.status}</p>
+																</TableCell>
+															)}
+														</TableRow>
+												  ))
+												: mainRow.map((row, i) => (
+														<TableRow
+															key={i}
+															sx={{
+																"&:last-child td, &:last-child th": {
+																	border: 0,
+																},
+															}}>
+															<TableCell component="th" scope="row">
+																{row.product}
+															</TableCell>
+															<TableCell align="left">{row.orderId}</TableCell>
+															<TableCell align="left">{row.date}</TableCell>
+															{!data && (
+																<TableCell align="left">
+																	<span
+																		className="status"
+																		style={makeStyles(row.status)}>
+																		{row.status}
+																	</span>
+																</TableCell>
+															)}
+															{!data && (
+																<TableCell align="left" className="details">
+																	details
+																</TableCell>
+															)}
+														</TableRow>
+												  ))}
+										</TableBody>
+									</Table>
+								</div>
+							</TableContainer>
+						</div>
 					);
 				})}
 			</div>
