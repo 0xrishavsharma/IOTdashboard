@@ -93,7 +93,7 @@ export default function BasicTable({ data }) {
 	const tableBorderRadius = "0px 0px 4px 4px";
 	return (
 		<div className="table">
-			<h3>{!data && "Recent Transactions"}</h3>
+			{!data && <h3>{!data && "Recent Transactions"}</h3>}
 			<div className="flex gap-12">
 				{dashboardRows.map((mainRow, i) => {
 					return (
@@ -105,7 +105,7 @@ export default function BasicTable({ data }) {
 							)}
 							<TableContainer
 								component={Paper}
-								className="mb-8 shadow-[0px_13px_20px_0px_#80808029]"
+								className="shadow-[0px_13px_20px_0px_#80808029]"
 								style={{
 									background: "none",
 									borderRadius: `${data[i][0]?.heading && "0px 0px 4px 4px"}`,

@@ -1,23 +1,19 @@
 .compactCard {
     display: flex;
-    // flex-direction: row;
     flex-direction: column;
     justify-content: space-between;
     position: relative;
     padding: 1rem;
     color: white;
     flex: 1;
-    // gap: 3rem;
     border-radius: 0.5rem;
-    height: 7rem !important;
+    height: 5rem !important;
     cursor: pointer;
-    transition: box-shadow 300ms ease;
     &:hover {
         box-shadow: none !important;
     }
 
     .radialBar {
-        // flex: 1 1;
         display: flex;
         flex-direction: column;
         justify-content: flex-end;
@@ -64,15 +60,19 @@
 
 .expandedCard {
     position: absolute;
-    width: 80%;
+    top: 1.5rem;
+    left: 1.5rem;
+    right: 1.5rem;
+    // width: calc(100% - 7rem);
     z-index: 9;
     border-radius: 0.5rem;
-    left: 14rem;
     display: flex;
+    min-height: calc(100vh - 3rem);
     flex-direction: column;
     align-items: center;
     justify-content: space-between;
     padding: 1rem;
+    padding-top: 2rem;
     // transition: all 300ms ease;
 
     span {
@@ -88,7 +88,7 @@
         }
     }
     .chartContainer {
-        width: 75%;
+        // width: 75%;
         // color: white;
         display: flex;
         flex-direction: column;
@@ -101,15 +101,15 @@
 @media (max-width: 1200px) {
     .expandedCard {
         top: 2rem;
-        height: 45vh;
+        // height: 45vh;
         left: 8rem;
     }
 }
 
 @media screen and (max-width: 786px) {
     .expandedCard {
-        top: 6rem;
-        left: 15px;
+        // top: 6rem;
+        // left: 15px;
         height: 50%;
         width: 80%;
     }

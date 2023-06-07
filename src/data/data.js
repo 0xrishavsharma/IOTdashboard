@@ -54,9 +54,10 @@ export const energyCards = [
 		title: "Average capacity consumed",
 		chartTitle: ["Daily capacity consumed", "Monthly capacity consumed"],
 		color: {
-			backGround: "linear-gradient(180deg, #bb67ff 0%, #c484f3 100%)",
-			boxShadow: "0px 10px 20px 0px #e0c6f5",
+			backGround: "linear-gradient(to bottom,#097969,#097969)",
+			boxShadow: "0px 10px 20px 0px #84ba96",
 		},
+
 		barValue: 70,
 		value1: dailyCapacityConsumed[5].value1,
 		value2: dailyCapacityConsumed[5].value2,
@@ -113,10 +114,18 @@ export const energyCards = [
 	{
 		title: "No. of breakdowns per day",
 		chartTitle: ["Count of breakdowns", "Breakdown count and Hours lost"],
+		// color: {
+		// 	backGround: "linear-gradient(180deg, #ff919D 0%, #fc929d 100%)",
+		// 	boxShadow: "0px 10px 20px 0px #fdc0c7",
+		// },
 		color: {
-			backGround: "linear-gradient(180deg, #ff919D 0%, #fc929d 100%)",
-			boxShadow: "0px 10px 20px 0px #fdc0c7",
+			backGround: "linear-gradient(to bottom,#097969,#097969)",
+			boxShadow: "0px 10px 20px 0px #84ba96",
 		},
+		// color: {
+		// 	backGround: "linear-gradient(180deg, #bb67ff 0%, #c484f3 100%)",
+		// 	boxShadow: "0px 10px 20px 0px #e0c6f5",
+		// },
 		barValue: 79,
 		value1: breakdowns[5].value3,
 		value2: breakdowns[5].value2,
@@ -186,10 +195,18 @@ export const energyCards = [
 		title: "Product Unit Produced",
 		chartTitle: ["Daily Units Produced", "Monthly Units Produced"],
 		color: {
-			backGround:
-				"linear-gradient(rgb(248, 212, 154) -146.42%, rgb(255, 202, 113) -46.42%)",
-			boxShadow: "0px 10px 20px 0px #f9d59b",
+			backGround: "linear-gradient(to bottom,#097969,#097969)",
+			boxShadow: "0px 10px 20px 0px #84ba96",
 		},
+		// color: {
+		// 	backGround:
+		// 		"linear-gradient(rgb(248, 212, 154) -146.42%, rgb(255, 202, 113) -46.42%)",
+		// 	boxShadow: "0px 10px 20px 0px #f9d59b",
+		// },
+		// color: {
+		// 	backGround: "linear-gradient(180deg, #bb67ff 0%, #c484f3 100%)",
+		// 	boxShadow: "0px 10px 20px 0px #e0c6f5",
+		// },
 		barValue: 73,
 		value1: unitsProduced[5].value3,
 		value2: unitsProduced[5].value2,
@@ -254,9 +271,17 @@ export const energyCards = [
 		title: "Forecasted vs Actual Sales",
 		chartTitle: ["Forecasted vs Actual Sales"],
 		color: {
-			backGround: "linear-gradient(to bottom, #7aabe2, #7a54e2)",
-			boxShadow: "0px 10px 20px 0px #575f8d",
+			backGround: "linear-gradient(to bottom,#097969,#097969)",
+			boxShadow: "0px 10px 20px 0px #84ba96",
 		},
+		// color: {
+		// 	backGround: "linear-gradient(to bottom, #7aabe2, #7a54e2)",
+		// 	boxShadow: "0px 10px 20px 0px #575f8d",
+		// },
+		// color: {
+		// 	backGround: "linear-gradient(180deg, #bb67ff 0%, #c484f3 100%)",
+		// 	boxShadow: "0px 10px 20px 0px #e0c6f5",
+		// },
 		barValue: 73,
 		value1: sales[5].value2,
 		value2: sales[5].value1,
@@ -300,9 +325,17 @@ export const energyCards = [
 	{
 		title: "Daily electricity units consumed",
 		color: {
-			backGround: "linear-gradient(to bottom, #75df9b, #2878e8)",
+			backGround: "linear-gradient(to bottom,#097969,#097969)",
 			boxShadow: "0px 10px 20px 0px #84ba96",
 		},
+		// color: {
+		// 	backGround: "linear-gradient(to bottom, #75df9b, #2878e8)",
+		// 	boxShadow: "0px 10px 20px 0px #84ba96",
+		// },
+		// color: {
+		// 	backGround: "linear-gradient(180deg, #bb67ff 0%, #c484f3 100%)",
+		// 	boxShadow: "0px 10px 20px 0px #e0c6f5",
+		// },
 		barValue: 73,
 		value1: dailyUnitsConsumed[5].value2,
 		value2: dailyUnitsConsumed[5].value1,
@@ -363,10 +396,18 @@ export const energyCards = [
 			"Projected and Actual Profit",
 		],
 		color: {
-			backGround:
-				"linear-gradient(180deg, #9e73ca 0%, #9374c2 50%, #7e73bb 100%)",
-			boxShadow: "0px 10px 20px 0px #b8b6e0",
+			backGround: "linear-gradient(to bottom,#097969,#097969)",
+			boxShadow: "0px 10px 20px 0px #84ba96",
 		},
+		// color: {
+		// 	backGround:
+		// 		"linear-gradient(180deg, #9e73ca 0%, #9374c2 50%, #7e73bb 100%)",
+		// 	boxShadow: "0px 10px 20px 0px #b8b6e0",
+		// },
+		// color: {
+		// 	backGround: "linear-gradient(180deg, #bb67ff 0%, #c484f3 100%)",
+		// 	boxShadow: "0px 10px 20px 0px #e0c6f5",
+		// },
 		barValue: 73,
 		value1: profit[5].value2,
 		value2: profit[5].value1,
@@ -411,7 +452,7 @@ export const energyCards = [
 		yaxis: [
 			{
 				title: {
-					text: "Profit(₹)",
+					text: "Turnover(₹)",
 				},
 			},
 			{
@@ -425,12 +466,206 @@ export const energyCards = [
 
 export const commodityCards = [
 	{
-		title: "Commodity metrics(Oil)",
+		title: "Raw material prices(Oil)",
 		chartTitle: ["Oil Prices - Month"],
+		open: true,
 		color: {
 			backGround: "radial-gradient(circle, #f9d9d9, #fb5749)",
 			boxShadow: "0px 10px 20px 0px #a5524a",
 		},
+		// color: {
+		// 	backGround: "linear-gradient(180deg, #bb67ff 0%, #c484f3 100%)",
+		// 	boxShadow: "0px 10px 20px 0px #e0c6f5",
+		// },
+		barValue: 73,
+		value1: commodityMetrics[6].value2,
+		value2: commodityMetrics[6].value1,
+		image: UilClipboardAlt,
+		dashboardData: [commodityMetrics],
+		series: [
+			[
+				{
+					name: "Oil Prices($)",
+					data: [123.5, 928.6, 518.1, 933.3, 1018, 955.2],
+				},
+			],
+			[
+				{
+					name: "Energy Units",
+					data: [1974, 2138, 2217, 1859, 2259, 1659],
+				},
+				{
+					name: "Quantity Dispatched",
+					data: [33450, 26410, 30504, 28863, 25485, 26192],
+				},
+			],
+		],
+
+		xaxis: [
+			{
+				title: {
+					text: "Month",
+				},
+				categories: ["Jan", "Feb", "Mar", "Apr", "May", "Jun"],
+			},
+			{
+				title: {
+					text: "Month",
+				},
+				categories: ["Jan", "Feb", "Mar", "Apr", "May", "Jun"],
+			},
+		],
+		yaxis: [
+			{
+				title: {
+					text: "Prices($)",
+				},
+			},
+			{
+				title: {
+					text: "",
+				},
+			},
+		],
+	},
+	{
+		title: "Selling Prices",
+		chartTitle: ["Oil Prices - Month"],
+		open: false,
+		color: {
+			backGround: "#80808087",
+			boxShadow: "0px 10px 20px 0px #808080",
+		},
+		// color: {
+		// 	backGround: "linear-gradient(180deg, #bb67ff 0%, #c484f3 100%)",
+		// 	boxShadow: "0px 10px 20px 0px #e0c6f5",
+		// },
+		barValue: 73,
+		value1: commodityMetrics[6].value2,
+		value2: commodityMetrics[6].value1,
+		image: UilClipboardAlt,
+		dashboardData: [commodityMetrics],
+		series: [
+			[
+				{
+					name: "Oil Prices($)",
+					data: [123.5, 928.6, 518.1, 933.3, 1018, 955.2],
+				},
+			],
+			[
+				{
+					name: "Energy Units",
+					data: [1974, 2138, 2217, 1859, 2259, 1659],
+				},
+				{
+					name: "Quantity Dispatched",
+					data: [33450, 26410, 30504, 28863, 25485, 26192],
+				},
+			],
+		],
+
+		xaxis: [
+			{
+				title: {
+					text: "Month",
+				},
+				categories: ["Jan", "Feb", "Mar", "Apr", "May", "Jun"],
+			},
+			{
+				title: {
+					text: "Month",
+				},
+				categories: ["Jan", "Feb", "Mar", "Apr", "May", "Jun"],
+			},
+		],
+		yaxis: [
+			{
+				title: {
+					text: "Prices($)",
+				},
+			},
+			{
+				title: {
+					text: "",
+				},
+			},
+		],
+	},
+	{
+		title: "Product Tyres",
+		chartTitle: ["Oil Prices - Month"],
+		open: false,
+		color: {
+			backGround: "#80808087",
+			boxShadow: "0px 10px 20px 0px #808080",
+		},
+		// color: {
+		// 	backGround: "linear-gradient(180deg, #bb67ff 0%, #c484f3 100%)",
+		// 	boxShadow: "0px 10px 20px 0px #e0c6f5",
+		// },
+		barValue: 73,
+		value1: commodityMetrics[6].value2,
+		value2: commodityMetrics[6].value1,
+		image: UilClipboardAlt,
+		dashboardData: [commodityMetrics],
+		series: [
+			[
+				{
+					name: "Oil Prices($)",
+					data: [123.5, 928.6, 518.1, 933.3, 1018, 955.2],
+				},
+			],
+			[
+				{
+					name: "Energy Units",
+					data: [1974, 2138, 2217, 1859, 2259, 1659],
+				},
+				{
+					name: "Quantity Dispatched",
+					data: [33450, 26410, 30504, 28863, 25485, 26192],
+				},
+			],
+		],
+
+		xaxis: [
+			{
+				title: {
+					text: "Month",
+				},
+				categories: ["Jan", "Feb", "Mar", "Apr", "May", "Jun"],
+			},
+			{
+				title: {
+					text: "Month",
+				},
+				categories: ["Jan", "Feb", "Mar", "Apr", "May", "Jun"],
+			},
+		],
+		yaxis: [
+			{
+				title: {
+					text: "Prices($)",
+				},
+			},
+			{
+				title: {
+					text: "",
+				},
+			},
+		],
+	},
+	{
+		title: "Process of Product",
+		chartTitle: ["Oil Prices - Month"],
+		open: false,
+		color: {
+			backGround: "#80808087",
+			boxShadow: "0px 10px 20px 0px #808080",
+		},
+		// color: {
+		// 	backGround: "linear-gradient(180deg, #bb67ff 0%, #c484f3 100%)",
+		// 	boxShadow: "0px 10px 20px 0px #e0c6f5",
+		// },
 		barValue: 73,
 		value1: commodityMetrics[6].value2,
 		value2: commodityMetrics[6].value1,
@@ -484,10 +719,133 @@ export const commodityCards = [
 	},
 ];
 
+export const manpowerCards = [
+	{
+		title: "Labor Attendance",
+		chartTitle: ["Oil Prices - Month"],
+		color: {
+			backGround: "#80808087",
+			boxShadow: "0px 10px 20px 0px #808080",
+		},
+		// color: {
+		// 	backGround: "linear-gradient(180deg, #bb67ff 0%, #c484f3 100%)",
+		// 	boxShadow: "0px 10px 20px 0px #e0c6f5",
+		// },
+		barValue: 73,
+		value1: commodityMetrics[6].value2,
+		value2: commodityMetrics[6].value1,
+		image: UilClipboardAlt,
+		dashboardData: [commodityMetrics],
+	},
+	{
+		title: "Labor Movement",
+		chartTitle: ["Oil Prices - Month"],
+		color: {
+			backGround: "#80808087",
+			boxShadow: "0px 10px 20px 0px #808080",
+		},
+		// color: {
+		// 	backGround: "linear-gradient(180deg, #bb67ff 0%, #c484f3 100%)",
+		// 	boxShadow: "0px 10px 20px 0px #e0c6f5",
+		// },
+		barValue: 73,
+		value1: commodityMetrics[6].value2,
+		value2: commodityMetrics[6].value1,
+		image: UilClipboardAlt,
+		dashboardData: [commodityMetrics],
+	},
+	{
+		title: "Labor Productivity",
+		chartTitle: ["Oil Prices - Month"],
+		color: {
+			backGround: "#80808087",
+			boxShadow: "0px 10px 20px 0px #808080",
+		},
+		// color: {
+		// 	backGround: "linear-gradient(180deg, #bb67ff 0%, #c484f3 100%)",
+		// 	boxShadow: "0px 10px 20px 0px #e0c6f5",
+		// },
+		barValue: 73,
+		value1: commodityMetrics[6].value2,
+		value2: commodityMetrics[6].value1,
+		image: UilClipboardAlt,
+		dashboardData: [commodityMetrics],
+	},
+];
+export const supplyChainCards = [
+	{
+		title: "Inventory Levels",
+		chartTitle: ["Oil Prices - Month"],
+		color: {
+			backGround: "#80808087",
+			boxShadow: "0px 10px 20px 0px #808080",
+		},
+		// color: {
+		// 	backGround: "linear-gradient(180deg, #bb67ff 0%, #c484f3 100%)",
+		// 	boxShadow: "0px 10px 20px 0px #e0c6f5",
+		// },
+		barValue: 73,
+		value1: commodityMetrics[6].value2,
+		value2: commodityMetrics[6].value1,
+		image: UilClipboardAlt,
+		dashboardData: [commodityMetrics],
+	},
+	{
+		title: "Number of SC Partners",
+		chartTitle: ["Oil Prices - Month"],
+		color: {
+			backGround: "#80808087",
+			boxShadow: "0px 10px 20px 0px #808080",
+		},
+		// color: {
+		// 	backGround: "linear-gradient(180deg, #bb67ff 0%, #c484f3 100%)",
+		// 	boxShadow: "0px 10px 20px 0px #e0c6f5",
+		// },
+		barValue: 73,
+		value1: commodityMetrics[6].value2,
+		value2: commodityMetrics[6].value1,
+		image: UilClipboardAlt,
+		dashboardData: [commodityMetrics],
+	},
+	{
+		title: "Share of Suppliers and Customers",
+		chartTitle: ["Oil Prices - Month"],
+		color: {
+			backGround: "#80808087",
+			boxShadow: "0px 10px 20px 0px #808080",
+		},
+		// color: {
+		// 	backGround: "linear-gradient(180deg, #bb67ff 0%, #c484f3 100%)",
+		// 	boxShadow: "0px 10px 20px 0px #e0c6f5",
+		// },
+		barValue: 73,
+		value1: commodityMetrics[6].value2,
+		value2: commodityMetrics[6].value1,
+		image: UilClipboardAlt,
+		dashboardData: [commodityMetrics],
+	},
+	{
+		title: "Highest Debit and Credit Transactions",
+		chartTitle: ["Oil Prices - Month"],
+		color: {
+			backGround: "#80808087",
+			boxShadow: "0px 10px 20px 0px #808080",
+		},
+		// color: {
+		// 	backGround: "linear-gradient(180deg, #bb67ff 0%, #c484f3 100%)",
+		// 	boxShadow: "0px 10px 20px 0px #e0c6f5",
+		// },
+		barValue: 73,
+		value1: commodityMetrics[6].value2,
+		value2: commodityMetrics[6].value1,
+		image: UilClipboardAlt,
+		dashboardData: [commodityMetrics],
+	},
+];
+
 import img1 from "../img/img1.png";
 import img2 from "../img/img2.png";
 import img3 from "../img/img3.png";
-import { data } from "autoprefixer";
 
 export const updatesData = [
 	{

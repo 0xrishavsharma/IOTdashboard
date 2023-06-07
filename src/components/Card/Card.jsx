@@ -17,7 +17,7 @@ import {
 	commodityMetrics,
 } from "../../../dashboardData2";
 
-const Card = ({ data }) => {
+const Card = ({ data, open }) => {
 	const [expanded, setExpanded] = useState(false);
 	// const [data, setData] = useState([]);
 
@@ -30,35 +30,36 @@ const Card = ({ data }) => {
 					setExpanded={() => setExpanded(false)}
 				/>
 			) : (
-				<CompactCard data={data} setExpanded={() => setExpanded(true)} />
+				<CompactCard data={data} open={open} setExpanded={() => setExpanded(true)} />
 			)}
 		</AnimateSharedLayout>
 	);
 };
 
-function CompactCard({ data, setExpanded }) {
+function CompactCard({ data, setExpanded, open }) {
 	// const Icon = data.image;
 	// const percentage = data.barValue;
 	return (
+
 		<motion.div
-			className="compactCard min-h-[150px]"
-			onClick={setExpanded}
+			className={`${!open && "cursor-not-allowed transition-none shadow-none"} compactCard min-h-[100px] transition-shadow duration-300 ease-in-out`}
+			onClick={open ? setExpanded : null}
 			style={{
 				background: data.color.backGround,
-				boxShadow: data.color.boxShadow,
+				boxShadow: open && data.color.boxShadow,
 			}}
-			layoutId="expandableCard">
+			layoutId="expandableCard" >
 			<div className="radialBar">
 				{/* <CircularProgressbar value={percentage} text={`${percentage}%`} /> */}
-				<span className="text-lg font-semibold">{data.title}</span>
+				<span className="font-bold">{data.title}</span>
 			</div>
 			<div className="flex items-center justify-between">
 				{/* <span>Last 24 hours</span> */}
-				<span className="text-3xl font-extrabold">{data.value1}</span>
+				{/* <span className="text-3xl font-extrabold">{data.value1}</span> */}
 				{/* <Icon /> */}
-				<span className="">{data.value2}</span>
+				{/* <span className="">{data.value2}</span> */}
 			</div>
-		</motion.div>
+		</motion.div >
 	);
 }
 function ExpandedCard({ sheetData, data, setExpanded }) {
@@ -113,16 +114,17 @@ function ExpandedCard({ sheetData, data, setExpanded }) {
 				boxShadow: data.color.boxShadow,
 			}}
 			layoutId="expandableCard">
-			<div style={{ alignSelf: "flex-end", cursor: "pointer", color: "white" }}>
-				<UilTimes onClick={setExpanded} />
-			</div>
-			<span className="mb-4 text-4xl font-black text-white uppercase">
+			<UilTimes
+				className="absolute text-3xl text-white cursor-pointer top-4 right-4"
+				onClick={setExpanded}
+			/>
+			<span className="mb-4 text-4xl font-black text-left text-white uppercase">
 				{data.title}
 			</span>
 			<div>
 				<Table data={data.dashboardData} />
 			</div>
-			<div className="flex gap-6 ">
+			<div className="flex gap-12 ">
 				{data.series.map((item, i) => {
 					return (
 						<div key={i} className="chartContainer">
