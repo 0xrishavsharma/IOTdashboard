@@ -53,11 +53,14 @@ export const energyCards = [
 	{
 		title: "Average capacity consumed",
 		chartTitle: ["Daily capacity consumed", "Monthly capacity consumed"],
+		// color: {
+		// 	backGround: "linear-gradient(to bottom,#097969,#097969)",
+		// 	boxShadow: "0px 10px 20px 0px #84ba96",
+		// },
 		color: {
-			backGround: "linear-gradient(to bottom,#097969,#097969)",
-			boxShadow: "0px 10px 20px 0px #84ba96",
+			backGround: "linear-gradient(180deg, #bb67ff 0%, #c484f3 100%)",
+			boxShadow: "0px 10px 20px 0px #e0c6f5",
 		},
-
 		barValue: 70,
 		value1: dailyCapacityConsumed[5].value1,
 		value2: dailyCapacityConsumed[5].value2,
@@ -118,14 +121,14 @@ export const energyCards = [
 		// 	backGround: "linear-gradient(180deg, #ff919D 0%, #fc929d 100%)",
 		// 	boxShadow: "0px 10px 20px 0px #fdc0c7",
 		// },
-		color: {
-			backGround: "linear-gradient(to bottom,#097969,#097969)",
-			boxShadow: "0px 10px 20px 0px #84ba96",
-		},
 		// color: {
-		// 	backGround: "linear-gradient(180deg, #bb67ff 0%, #c484f3 100%)",
-		// 	boxShadow: "0px 10px 20px 0px #e0c6f5",
+		// 	backGround: "linear-gradient(to bottom,#097969,#097969)",
+		// 	boxShadow: "0px 10px 20px 0px #84ba96",
 		// },
+		color: {
+			backGround: "linear-gradient(180deg, #bb67ff 0%, #c484f3 100%)",
+			boxShadow: "0px 10px 20px 0px #e0c6f5",
+		},
 		barValue: 79,
 		value1: breakdowns[5].value3,
 		value2: breakdowns[5].value2,
@@ -194,19 +197,19 @@ export const energyCards = [
 	{
 		title: "Product Unit Produced",
 		chartTitle: ["Daily Units Produced", "Monthly Units Produced"],
-		color: {
-			backGround: "linear-gradient(to bottom,#097969,#097969)",
-			boxShadow: "0px 10px 20px 0px #84ba96",
-		},
+		// color: {
+		// 	backGround: "linear-gradient(to bottom,#097969,#097969)",
+		// 	boxShadow: "0px 10px 20px 0px #84ba96",
+		// },
 		// color: {
 		// 	backGround:
 		// 		"linear-gradient(rgb(248, 212, 154) -146.42%, rgb(255, 202, 113) -46.42%)",
 		// 	boxShadow: "0px 10px 20px 0px #f9d59b",
 		// },
-		// color: {
-		// 	backGround: "linear-gradient(180deg, #bb67ff 0%, #c484f3 100%)",
-		// 	boxShadow: "0px 10px 20px 0px #e0c6f5",
-		// },
+		color: {
+			backGround: "linear-gradient(180deg, #bb67ff 0%, #c484f3 100%)",
+			boxShadow: "0px 10px 20px 0px #e0c6f5",
+		},
 		barValue: 73,
 		value1: unitsProduced[5].value3,
 		value2: unitsProduced[5].value2,
@@ -270,18 +273,18 @@ export const energyCards = [
 	{
 		title: "Forecasted vs Actual Sales",
 		chartTitle: ["Forecasted vs Actual Sales"],
-		color: {
-			backGround: "linear-gradient(to bottom,#097969,#097969)",
-			boxShadow: "0px 10px 20px 0px #84ba96",
-		},
+		// color: {
+		// 	backGround: "linear-gradient(to bottom,#097969,#097969)",
+		// 	boxShadow: "0px 10px 20px 0px #84ba96",
+		// },
 		// color: {
 		// 	backGround: "linear-gradient(to bottom, #7aabe2, #7a54e2)",
 		// 	boxShadow: "0px 10px 20px 0px #575f8d",
 		// },
-		// color: {
-		// 	backGround: "linear-gradient(180deg, #bb67ff 0%, #c484f3 100%)",
-		// 	boxShadow: "0px 10px 20px 0px #e0c6f5",
-		// },
+		color: {
+			backGround: "linear-gradient(180deg, #bb67ff 0%, #c484f3 100%)",
+			boxShadow: "0px 10px 20px 0px #e0c6f5",
+		},
 		barValue: 73,
 		value1: sales[5].value2,
 		value2: sales[5].value1,
@@ -324,18 +327,18 @@ export const energyCards = [
 	},
 	{
 		title: "Daily electricity units consumed",
-		color: {
-			backGround: "linear-gradient(to bottom,#097969,#097969)",
-			boxShadow: "0px 10px 20px 0px #84ba96",
-		},
+		// color: {
+		// 	backGround: "linear-gradient(to bottom,#097969,#097969)",
+		// 	boxShadow: "0px 10px 20px 0px #84ba96",
+		// },
 		// color: {
 		// 	backGround: "linear-gradient(to bottom, #75df9b, #2878e8)",
 		// 	boxShadow: "0px 10px 20px 0px #84ba96",
 		// },
-		// color: {
-		// 	backGround: "linear-gradient(180deg, #bb67ff 0%, #c484f3 100%)",
-		// 	boxShadow: "0px 10px 20px 0px #e0c6f5",
-		// },
+		color: {
+			backGround: "linear-gradient(180deg, #bb67ff 0%, #c484f3 100%)",
+			boxShadow: "0px 10px 20px 0px #e0c6f5",
+		},
 		barValue: 73,
 		value1: dailyUnitsConsumed[5].value2,
 		value2: dailyUnitsConsumed[5].value1,
@@ -395,19 +398,19 @@ export const energyCards = [
 			"Projected and Actual Turnover",
 			"Projected and Actual Profit",
 		],
-		color: {
-			backGround: "linear-gradient(to bottom,#097969,#097969)",
-			boxShadow: "0px 10px 20px 0px #84ba96",
-		},
+		// color: {
+		// 	backGround: "linear-gradient(to bottom,#097969,#097969)",
+		// 	boxShadow: "0px 10px 20px 0px #84ba96",
+		// },
 		// color: {
 		// 	backGround:
 		// 		"linear-gradient(180deg, #9e73ca 0%, #9374c2 50%, #7e73bb 100%)",
 		// 	boxShadow: "0px 10px 20px 0px #b8b6e0",
 		// },
-		// color: {
-		// 	backGround: "linear-gradient(180deg, #bb67ff 0%, #c484f3 100%)",
-		// 	boxShadow: "0px 10px 20px 0px #e0c6f5",
-		// },
+		color: {
+			backGround: "linear-gradient(180deg, #bb67ff 0%, #c484f3 100%)",
+			boxShadow: "0px 10px 20px 0px #e0c6f5",
+		},
 		barValue: 73,
 		value1: profit[5].value2,
 		value2: profit[5].value1,
@@ -469,14 +472,14 @@ export const commodityCards = [
 		title: "Raw material prices(Oil)",
 		chartTitle: ["Oil Prices - Month"],
 		open: true,
-		color: {
-			backGround: "radial-gradient(circle, #f9d9d9, #fb5749)",
-			boxShadow: "0px 10px 20px 0px #a5524a",
-		},
 		// color: {
-		// 	backGround: "linear-gradient(180deg, #bb67ff 0%, #c484f3 100%)",
-		// 	boxShadow: "0px 10px 20px 0px #e0c6f5",
+		// 	backGround: "radial-gradient(circle, #f9d9d9, #fb5749)",
+		// 	boxShadow: "0px 10px 20px 0px #a5524a",
 		// },
+		color: {
+			backGround: "linear-gradient(180deg, #bb67ff 0%, #c484f3 100%)",
+			boxShadow: "0px 10px 20px 0px #e0c6f5",
+		},
 		barValue: 73,
 		value1: commodityMetrics[6].value2,
 		value2: commodityMetrics[6].value1,
